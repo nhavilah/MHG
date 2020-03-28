@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MHG</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style>
+            .mySlides {
+                display:none;
+                -webkit-animation-name: fade;
+                -webkit-animation-duration: 2.5s;
+                animation-name: fade;
+                animation-duration: 2.5s;
+            }
+            @-webkit-keyframes fade {
+                from {opacity: .4} 
+                to {opacity: 1}
+            }
+
+            @keyframes fade {
+                from {opacity: .4} 
+                to {opacity: 1}
+            }
+            body{
+                background: #000;
+            }
+            .row{
+                display:flex;
+                flex-wrap:wrap;
+            }
+            .column{
+                flex: 33%;
+                max-width: 32.7%;
+                padding: 0 4px;
+            }
+            .column img{
+                margin-top: 8px;
+                vertical-align: middle;
+                width: 100%;
+            }
+            @media screen and (max-width: 800px) {
+                .column {
+                    flex: 100%;
+                    max-width: 100%;
+                }
+            }
+            @media screen and (max-width: 100%) {
+                .column {
+                    flex: 100%;
+                    max-width: 100%;
+                }
+            }
+            .parent{
+                position: relative;
+            }
+            .child{
+                position: absolute;
+                top: -0.5%;
+                left: 7%;
+                height:80%;
+                width: 80%;
+            }
+            .buttonChild{
+                position:absolute;
+            }
+        </style>
+</head>
+<body>
+
+<!--set up the background image grid-->
+<div class="row">
+    <div class="column">
+        <div class="parent">
+            <img src="motorhaus box 1.png" style="height:55%">
+            <div class="buttonChild">
+                <img src="mhg button 1 non selected.jpg">
+            </div>
+        </div>
+        <img src="motorhaus box 6.png" style="height:40%">
+    </div>
+    <div class="column">
+        <div class="parent">
+            <img src="motorhaus box 2.png" style="height:30%">
+            <!--add the slideshow for the automatic image carousel-->
+            <div class="child">
+                <div class="w3-content w3-section" style="max-width:500px">
+                    <img class="mySlides" src="mhg car 1.png" style="width:100%">
+                    <img class="mySlides" src="mhg car 2.png" style="width:100%">
+                    <img class="mySlides" src="mhg car 3.png" style="width:100%">
+                </div>
+            </div>
+        </div>
+        <img src="motorhaus box 4.png" style="height:40%">
+        <img src="motorhaus box 7.png" style="height:31.5%">
+    </div>
+    <div class="column">
+        <img src="motorhaus box 3.png">
+        <img src="motorhaus box 5.png">
+        <img src="motorhaus box 8.png" style="height:29%">
+    </div>
+</div>
+
+<script>
+    var myIndex = 0;
+    carousel();
+    
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}    
+      x[myIndex-1].style.display = "block";  
+      setTimeout(carousel, 5000); // Change image every 5 seconds
+    }
+</script>
+    
+</body>
+</html>
